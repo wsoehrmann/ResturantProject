@@ -10,16 +10,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.RequestDispatcher;
-import java.util.*;
 import Model.RestaurantModel;
-import Resturant.Resturant;
 /**
  *
  * @author Wesley
  */
-@WebServlet(name = "OrderController", urlPatterns = {"/OrderController"})
-public class OrderController extends HttpServlet {
+@WebServlet(name = "OrderCalcController", urlPatterns = {"/OrderCalcController"})
+public class OrderCalcController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
@@ -34,17 +31,7 @@ public class OrderController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String order = request.getParameter("order");
-        
-        if(order.equals("order")){
-            RequestDispatcher rd = request.getRequestDispatcher("/orderController");
-            rd.forward(request,response);
-        }else{
-            response.sendRedirect("index.jsp");
-        }
-        
-        
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -75,15 +62,7 @@ public class OrderController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        Map<String,String[]>selectedO = request.getParameterMap();
-        
-        String newOrder[] = request.getParameterValues("selectedOrder");
-        RestaurantModel rm = RestaurantModel();
-        
-        ArrayList<Restaurant>newOrder = rm.processOrder();
-        request.setAttribute("newOrder", newOrder);
-        RequestDispatcher r = request.getRequestDispatcher(index.jsp);
+        processRequest(request, response);
     }
 
     /**
@@ -95,8 +74,4 @@ public class OrderController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private RestaurantModel RestaurantModel() {
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
 }
