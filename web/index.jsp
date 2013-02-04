@@ -19,17 +19,17 @@
                       if(selectFoods.length ==0){
                           selectFoods.options[0] = new Option(menuFoods.option[menuFoods.selectedIndex].text);
                       }else{
-                       selectFoods.add(add(new Option(menuFoods.options[menuFoods.selectedIndex].text), selectFoods.options[selectFoods.length]))
+                       selectFoods.add(new Option(menuFoods.options[menuFoods.selectedIndex].text), selectFoods.options[selectFoods.length]);
                        
                       }
                       }
                   }
                   function removeFoodItem(selectFoods){
-                      if(seletFoods.selectedIndex == -1){
+                      if(selectFoods.selectedIndex == -1){
                           alert("You need to pick a item to remove it");
                           
                       }else{
-                          selectFods.remove(selectFoods.selectedIndex);
+                          selectFoods.remove(selectFoods.selectedIndex);
                           
                       }
                   }
@@ -61,7 +61,7 @@
                     </td>                   
                 </tr>
                 <tr><td width="40" bgcolor="blue" align ="center">
-                        <select id="menuFoods" name="menuFoods" size= "6" style= "width:25ex:">
+                        <select id="menuFoods" name="menuFoods" size= "6" style= "width:25ex;">
                             <option value value="1">Taco</option>
                             <option>Turkey Burger</option>
                             <option>Pie</option>
@@ -71,7 +71,7 @@
                         </select>
                     </td>
                     <td width="20%"bgcolor="red" align="center">
-                        <input type="button" onClick="addFoodItem(menuFoods, selectedFoods)"value="add ->"/>
+                        <input type="button" onClick="addFoodItem(menuFoods, selectedFoods)"value="Add ->"/>
                         <br />
                         <input type="button" onClick="removeFoodItem(selectedFoods)" value="<- Remove"/>
                         <br/>
