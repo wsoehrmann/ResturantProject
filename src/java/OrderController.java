@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 import java.util.*;
-import Model.RestaurantModel;
+import Model.ResturantModel;
 import Resturant.Resturant;
 /**
  *
@@ -78,10 +78,10 @@ public class OrderController extends HttpServlet {
         
         Map<String,String[]>selectedO = request.getParameterMap();
         
-        String newOrder[] = request.getParameterValues("selectedOrder");
-        RestaurantModel rm = RestaurantModel();
+        String newFoods[] = request.getParameterValues("selectedOrder");
+        ResturantModel rm = RestaurantModel();
         
-        ArrayList<Restaurant>newOrder = rm.processOrder();
+      ArrayList<Resturant>newOrder = rm.processOrders();
         request.setAttribute("newOrder", newOrder);
         RequestDispatcher r = request.getRequestDispatcher(index.jsp);
     }
@@ -96,7 +96,7 @@ public class OrderController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    private RestaurantModel RestaurantModel() {
+    private ResturantModel RestaurantModel() {
         throw new UnsupportedOperationException("Not yet implemented");
     }
 }

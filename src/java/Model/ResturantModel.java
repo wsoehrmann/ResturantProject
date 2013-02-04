@@ -12,16 +12,16 @@ import java.util.ArrayList;
  *
  * @author Wesley
  */
- public class RestaurantModel {
+ public class ResturantModel {
    private ArrayList<Resturant> orders  = new ArrayList<Resturant>();
    private String[] foods;
-   public ResturantModel(String[] orders);
-   this.order = orders;
-   
-   public ArryList<resturant> processOrders(){
-       for(int x = 0; x<rawOrders.length x++){
-           Resturant r = new Resturant();
-           orders.add(o);
+   public ResturantModel(String[] foods){
+   this.foods = foods;
+   }
+   public ArrayList<Resturant> processOrders(){
+       for(int x = 0; x<foods.length; x++){
+           Resturant r = new Resturant(foods[x]);
+           orders.add(r);
        }
        return orders;
    }
