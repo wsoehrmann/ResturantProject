@@ -17,16 +17,8 @@
     <body>
         <h1>Thank you for your order here are your totals</h1>
     </body>
-    <ul
-        <%
-        ArrayList<Resturant>orders = (ArrayList)request.getAttribute("orders");
-        for(int x = 0; x < orders.size(); x++){
-            out.println("<li>" + orders.get(x).getName() + "</li>");
-                       }
-            out.println("</ul>");
-                       
-            %>
-        
-    </ul>
+    <h1>Your bill before tax and tip is</h1>
+    <h1>Your bill with tax is</h1>
+    <h1>Your bill with tax and tip</h1>
 </body>
 </html>

@@ -35,10 +35,10 @@ public class OrderController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String order = request.getParameter("order");
+        String order = request.getParameter("selectedFoods");
         
         if(order.equals("order")){
-            RequestDispatcher rd = request.getRequestDispatcher("/orderController");
+            RequestDispatcher rd = request.getRequestDispatcher("/OrderController");
             rd.forward(request,response);
         }else{
             response.sendRedirect("index.jsp");
