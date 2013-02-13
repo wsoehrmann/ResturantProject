@@ -42,11 +42,11 @@ public class OrderController extends HttpServlet {
         
         
         PrintWriter out = response.getWriter();
-        Float sItem1 = Float.parseFloat(request.getParameter("menuitem1"));
-        Float sItem2 = Float.parseFloat(request.getParameter("menuitem2"));
-        Float sItem3 = Float.parseFloat(request.getParameter("menuitem3"));
-        Float sItem4 = Float.parseFloat(request.getParameter("menuitem4"));
-        Float sItem5 = Float.parseFloat(request.getParameter("menuitem5"));
+        Double sItem1 = Double.parseDouble(request.getParameter("menuitem1"));
+        Double sItem2 = Double.parseDouble(request.getParameter("menuitem2"));
+        Double sItem3 = Double.parseDouble(request.getParameter("menuitem3"));
+        Double sItem4 = Double.parseDouble(request.getParameter("menuitem4"));
+        Double sItem5 = Double.parseDouble(request.getParameter("menuitem5"));
         String strTotal = "";
         String strTotalWithTip = "";
         String strTotalWithTax = "";
