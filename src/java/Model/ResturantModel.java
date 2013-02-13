@@ -12,103 +12,103 @@ import java.util.ArrayList;
  */
 public class ResturantModel {
 
-    private double tip;
-    private double tax;
-    private double totalBeforeTax;
-    private double totalAfterTax;
-    private double TIP_RATE = .15;
-    private double TAX_RATE = .05;
-    private double menuItem1;
+    private Float tip;
+    private Float tax;
+    private Float totalBeforeTax;
+    private Float totalAfterTax;
+    private Float TIP_RATE = .15;
+    private Float TAX_RATE = .05;
+    private Float menuItem1;
 
-    public double getTIP_RATE() {
+    public Float getTIP_RATE() {
         return TIP_RATE;
     }
 
-    public void setTIP_RATE(double TIP_RATE) {
+    public void setTIP_RATE(Float TIP_RATE) {
         this.TIP_RATE = TIP_RATE;
     }
 
-    public double getTAX_RATE() {
+    public Float getTAX_RATE() {
         return TAX_RATE;
     }
 
-    public void setTAX_RATE(double TAX_RATE) {
+    public void setTAX_RATE(Float TAX_RATE) {
         this.TAX_RATE = TAX_RATE;
     }
 
-    public double getMenuItem1() {
+    public Float getMenuItem1() {
         return menuItem1;
     }
 
-    public void setMenuItem1(double menuItem1) {
+    public void setMenuItem1(Float menuItem1) {
         this.menuItem1 = menuItem1;
     }
 
-    public double getMenuItem2() {
+    public Float getMenuItem2() {
         return menuItem2;
     }
 
-    public void setMenuItem2(double menuItem2) {
+    public void setMenuItem2(Float menuItem2) {
         this.menuItem2 = menuItem2;
     }
 
-    public double getMenuItem3() {
+    public Float getMenuItem3() {
         return menuItem3;
     }
 
-    public void setMenuItem3(double menuItem3) {
+    public void setMenuItem3(Float menuItem3) {
         this.menuItem3 = menuItem3;
     }
 
-    public double getMenuItem4() {
+    public Float getMenuItem4() {
         return menuItem4;
     }
 
-    public void setMenuItem4(double menuItem4) {
+    public void setMenuItem4(Float menuItem4) {
         this.menuItem4 = menuItem4;
     }
 
-    public double getMenuItem5() {
+    public Float getMenuItem5() {
         return menuItem5;
     }
 
-    public void setMenuItem5(double menuItem5) {
+    public void setMenuItem5(Float menuItem5) {
         this.menuItem5 = menuItem5;
     }
-    private double menuItem2;
-    private double menuItem3;
-    private double menuItem4;
-    private double menuItem5;
+    private Float menuItem2;
+    private Float menuItem3;
+    private Float menuItem4;
+    private Float menuItem5;
 
-    public double getTip() {
+    public Float getTip() {
         return totalBeforeTax * TIP_RATE;
     }
 
-    public void setTip(double tip) {
+    public void setTip(Float tip) {
         this.tip = tip;
     }
 
-    public double getTax() {
+    public Float getTax() {
         return totalBeforeTax * TAX_RATE;
     }
 
-    public void setTax(double tax) {
+    public void setTax(Float tax) {
         this.tax = tax;
     }
 
-    public double getTotalBeforeTax() {
+    public Float getTotalBeforeTax() {
         return menuItem1 + menuItem2 + menuItem3 + menuItem4 + menuItem5;
     }
 
-    public void setTotalBeforeTax(double totalBeforeTax) {
+    public void setTotalBeforeTax(Float totalBeforeTax) {
         this.totalBeforeTax = totalBeforeTax;
     }
 
-    public double getTotalAfterTax() {
+    public Float getTotalAfterTax() {
         return tip + tax + totalBeforeTax;
     }
 
-    public void setTotalAfterTax(double totalAfterTax) {
+    public void setTotalAfterTax(Float totalAfterTax) {
         this.totalAfterTax = totalAfterTax;
     }
 }

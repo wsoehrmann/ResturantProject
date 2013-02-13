@@ -37,14 +37,17 @@ public class OrderController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        
+        
+        
+        
         PrintWriter out = response.getWriter();
-        Double sItem1 = Double.parseDouble(request.getParameter("menuitem1"));
-        Double sItem2 = Double.parseDouble(request.getParameter("menuitem2"));
-        Double sItem3 = Double.parseDouble(request.getParameter("menuitem3"));
-        Double sItem4 = Double.parseDouble(request.getParameter("menuitem4"));
-        Double sItem5 = Double.parseDouble(request.getParameter("menuitem5"));
+        Float sItem1 = Float.parseFloat(request.getParameter("menuitem1"));
+        Float sItem2 = Float.parseFloat(request.getParameter("menuitem2"));
+        Float sItem3 = Float.parseFloat(request.getParameter("menuitem3"));
+        Float sItem4 = Float.parseFloat(request.getParameter("menuitem4"));
+        Float sItem5 = Float.parseFloat(request.getParameter("menuitem5"));
         String strTotal = "";
-
         String strTotalWithTip = "";
         String strTotalWithTax = "";
 
@@ -63,7 +66,7 @@ public class OrderController extends HttpServlet {
 
         } catch (NumberFormatException nfe) {
             strTotal = "Sorry must order from the menu";
-
+        }
             String destination = "/menu.jsp";
             request.setAttribute("Total", strTotal);
             request.setAttribute("TotalWithTip", strTotalWithTip);
@@ -71,7 +74,7 @@ public class OrderController extends HttpServlet {
             RequestDispatcher view =
                     request.getRequestDispatcher(destination);
             view.forward(request, response);
-        }
+        
     }
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
@@ -115,3 +118,4 @@ public class OrderController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 }
+
