@@ -15,24 +15,23 @@
 
     </head>
     <body>
+        <H4>Welcome to Hal's House of Ham</h>
         <h1>Menu</h1>
         <form>
 
 
-            <input type="checkbox" name="food" value="Taco">Taco<br>
-            <input type="checkbox" name="food" value="Cheesburger">Cheeseburger<br>
+            <input type="checkbox" name="menuitem1" value="2.99">Taco 2.99<br>
+            <input type="checkbox" name="menuitem2" value="4.99">Cheeseburger 4.99<br>
+            <input type="checkbox" name="menuitem3" value="1.99">Fries 1.99<br>
+            <input type="checkbox" name="menuitem4" value=".99">Soda .99<br>
+            <input type="checkbox" name="menuitem5" value=".69">Milk .69<br>
 
-            <input type="checkbox" name="food" value="Fries">Fries<br>
+            
 
-            <input type="checkbox" name="drink" value="Soda">Soda<br>
-            <input type="checkbox" name="drink" value="Milk">Milk<br>
-
-            <form>
-
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" name="submit" />
 
 
-            </form>
+            
 
 
         </form>
