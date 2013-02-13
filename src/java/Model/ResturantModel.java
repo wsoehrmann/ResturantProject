@@ -1,25 +1,24 @@
 package Model;
 
-
 import java.util.ArrayList;
 
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Wesley
  */
- public class ResturantModel {
-   private double tip;
-   private double tax;
-   private double totalBeforeTax;
-   private double totalAfterTax;
-   private double TIP_RATE = .15;
-   private double TAX_RATE = .05;
-   private double menuItem1;
+public class ResturantModel {
+
+    private double tip;
+    private double tax;
+    private double totalBeforeTax;
+    private double totalAfterTax;
+    private double TIP_RATE = .15;
+    private double TAX_RATE = .05;
+    private double menuItem1;
 
     public double getTIP_RATE() {
         return TIP_RATE;
@@ -42,7 +41,7 @@ import java.util.ArrayList;
     }
 
     public void setMenuItem1(double menuItem1) {
-        this.menuItem1 =Double.valueOf(menuItem1);
+        this.menuItem1 = menuItem1;
     }
 
     public double getMenuItem2() {
@@ -50,7 +49,7 @@ import java.util.ArrayList;
     }
 
     public void setMenuItem2(double menuItem2) {
-        this.menuItem2 = Double.valueOf(menuItem2);
+        this.menuItem2 = menuItem2;
     }
 
     public double getMenuItem3() {
@@ -58,7 +57,7 @@ import java.util.ArrayList;
     }
 
     public void setMenuItem3(double menuItem3) {
-        this.menuItem3 = Double.valueOf(menuItem3);
+        this.menuItem3 = menuItem3;
     }
 
     public double getMenuItem4() {
@@ -66,7 +65,7 @@ import java.util.ArrayList;
     }
 
     public void setMenuItem4(double menuItem4) {
-        this.menuItem4 = Double.valueOf(menuItem4);
+        this.menuItem4 = menuItem4;
     }
 
     public double getMenuItem5() {
@@ -74,12 +73,12 @@ import java.util.ArrayList;
     }
 
     public void setMenuItem5(double menuItem5) {
-        this.menuItem5 = Double.valueOf(menuItem5);
+        this.menuItem5 = menuItem5;
     }
-   private double menuItem2;
-   private double menuItem3;
-   private double menuItem4;
-   private double menuItem5;
+    private double menuItem2;
+    private double menuItem3;
+    private double menuItem4;
+    private double menuItem5;
 
     public double getTip() {
         return totalBeforeTax * TIP_RATE;
@@ -112,6 +111,4 @@ import java.util.ArrayList;
     public void setTotalAfterTax(double totalAfterTax) {
         this.totalAfterTax = totalAfterTax;
     }
-   
-   
 }

@@ -36,15 +36,13 @@ public class OrderController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         PrintWriter out = response.getWriter();
-        String sItem1 = request.getParameter("menuitem1");
-
-        String sItem2 = request.getParameter("menuitem2");
-
-        String sItem3 = request.getParameter("menuitem3");
-
-        String sItem4 = request.getParameter("menuitem4");
-        String sItem5 = request.getParameter("menuitem5");
+        Double sItem1 = Double.parseDouble(request.getParameter("menuitem1"));
+        Double sItem2 = Double.parseDouble(request.getParameter("menuitem2"));
+        Double sItem3 = Double.parseDouble(request.getParameter("menuitem3"));
+        Double sItem4 = Double.parseDouble(request.getParameter("menuitem4"));
+        Double sItem5 = Double.parseDouble(request.getParameter("menuitem5"));
         String strTotal = "";
 
         String strTotalWithTip = "";
@@ -53,57 +51,41 @@ public class OrderController extends HttpServlet {
 
         try {
             ResturantModel order = new ResturantModel();
-
             order.setMenuItem1(sItem1);
             order.setMenuItem2(sItem2);
             order.setMenuItem3(sItem3);
             order.setMenuItem4(sItem4);
             order.setMenuItem5(sItem5);
 
-             strTotal = "" + order.getTotalBeforeTax();
-             strTotalWithTip = "" + order.getTip();
-             strTotalWithTax = "" + order.getTotalAfterTax();
+            strTotal = "" + order.getTotalBeforeTax();
+            strTotalWithTip = "" + order.getTip();
+            strTotalWithTax = "" + order.getTotalAfterTax();
 
         } catch (NumberFormatException nfe) {
-            strTotalBeforeTax = "Sorry must order from the menu";
+            strTotal = "Sorry must order from the menu";
 
-        // Each user has a session object. We can use this to store
-        // stuff for the duration of the user session - the time that
-        // the user is connected to our app.
-        HttpSession session = request.getSession();
-        Object objService = session.getAttribute("orderService");
-
-
-
-
-        String[] orderItems = null;
-
-        if (orderEvent == null) {
-            // nothing to do, it's a new order
-        } else if (orderEvent.startsWith("Place")) {
+            String destination = "/menu.jsp";
+            request.setAttribute("Total", strTotal);
+            request.setAttribute("TotalWithTip", strTotalWithTip);
+            request.setAttribute("TotalWithTax", strTotalWithTax);
+            RequestDispatcher view =
+                    request.getRequestDispatcher(destination);
+            view.forward(request, response);
         }
-
-
-
-        // Redirect to destination page
-        RequestDispatcher dispatcher =
-                getServletContext().getRequestDispatcher(destination);
-        dispatcher.forward(request, response);
-
     }
-}
 // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-/**
- * Handles the HTTP
- * <code>GET</code> method.
- *
- * @param request servlet request
- * @param response servlet response
- * @throws ServletException if a servlet-specific error occurs
- * @throws IOException if an I/O error occurs
- */
-@Override
-        protected void doGet(HttpServletRequest request, HttpServletResponse response)
+
+    /**
+     * Handles the HTTP
+     * <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -118,7 +100,7 @@ public class OrderController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-        protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
@@ -129,7 +111,7 @@ public class OrderController extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-        public String getServletInfo() {
+    public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 }
